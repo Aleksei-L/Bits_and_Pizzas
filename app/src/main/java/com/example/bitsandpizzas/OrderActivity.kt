@@ -8,5 +8,8 @@ class OrderActivity : AppCompatActivity() {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_order)
 		setSupportActionBar(findViewById(R.id.toolbar))
+
+		val myActionBar = supportActionBar
+		myActionBar!!.setDisplayHomeAsUpEnabled(true)
 	}
 }

@@ -15,7 +15,8 @@
         <activity
             android:name=".OrderActivity"
             android:exported="false"
-            android:label="@string/create_order" />
+            android:label="@string/create_order"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
