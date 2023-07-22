@@ -1,12 +1,17 @@
 package com.example.bitsandpizzas
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.ShareActionProvider
 import androidx.core.view.MenuItemCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.viewpager.widget.ViewPager
+import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
 	private lateinit var shareActionProvider: ShareActionProvider
@@ -15,6 +20,13 @@ class MainActivity : AppCompatActivity() {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_main)
 		setSupportActionBar(findViewById(R.id.toolbar))
+
+		val pagerAdapter = SectionsPagerAdapter(supportFragmentManager)
+		val pager: ViewPager = findViewById(R.id.pager)
+		pager.adapter = pagerAdapter
+
+		val tabLayout: TabLayout = findViewById(R.id.tabs)
+		tabLayout.setupWithViewPager(pager)
 	}
 
 	override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -40,5 +52,28 @@ class MainActivity : AppCompatActivity() {
 		myIntent.type = "text/plain"
 		intent.putExtra(Intent.EXTRA_TEXT, text)
 		shareActionProvider.setShareIntent(intent)
+	}
+}
+
+class SectionsPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+	override fun getCount(): Int = 4
+
+	override fun getItem(position: Int): Fragment {
+		return when (position) {
+			0 -> TopFragment()
+			1 -> PizzaFragment()
+			2 -> PastaFragment()
+			else -> StoresFragment()
+		}
+	}
+
+	override fun getPageTitle(position: Int): CharSequence? {
+		return when (position) {
+			0 -> "Home"
+			1 -> "Pizzas"
+			2 -> "Pasta"
+			3 -> "Stores"
+			else -> null
+		}
 	}
 }
