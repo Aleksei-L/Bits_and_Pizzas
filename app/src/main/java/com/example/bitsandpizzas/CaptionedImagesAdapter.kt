@@ -9,8 +9,19 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
+
 class CaptionedImagesAdapter(private val captions: Array<String?>, private val imageIds: Array<Int?>) :
 	RecyclerView.Adapter<CaptionedImagesAdapter.ViewHolder>() {
+	private lateinit var listener: Listener
+
+	interface Listener {
+		fun onClick(position: Int)
+	}
+
+	fun setListener(listen: Listener) {
+		listener = listen
+	}
+
 	class ViewHolder(val cardView: CardView) : RecyclerView.ViewHolder(cardView)
 
 	override fun getItemCount(): Int = captions.size
@@ -29,5 +40,9 @@ class CaptionedImagesAdapter(private val captions: Array<String?>, private val i
 		imageView.setImageDrawable(drawable)
 		imageView.contentDescription = captions[position]
 		textView.text = captions[position]
+
+		cardView.setOnClickListener {
+			listener.onClick(position)
+		}
 	}
 }

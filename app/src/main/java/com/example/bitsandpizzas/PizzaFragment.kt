@@ -1,5 +1,6 @@
 package com.example.bitsandpizzas
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -29,6 +30,14 @@ class PizzaFragment : Fragment() {
 
 		val layoutManager = GridLayoutManager(activity, 2)
 		pizzaRecycler.layoutManager = layoutManager
+
+		adapter.setListener(object : CaptionedImagesAdapter.Listener {
+			override fun onClick(position: Int) {
+				val intent = Intent(activity, PizzaDetailActivity::class.java)
+				intent.putExtra(PizzaDetailActivity.EXTRA_PIZZA_ID, position)
+				activity!!.startActivity(intent)
+			}
+		})
 
 		return pizzaRecycler
 	}
