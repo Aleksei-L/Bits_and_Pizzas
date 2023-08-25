@@ -4,20 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.PizzaDetailActivity">
+    tools:context=".activity.PastaDetailActivity">
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar_main" />
 
     <TextView
-        android:id="@+id/pizza_text"
+        android:id="@+id/pasta_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ImageView
-        android:id="@+id/pizza_image"
+        android:id="@+id/pasta_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"

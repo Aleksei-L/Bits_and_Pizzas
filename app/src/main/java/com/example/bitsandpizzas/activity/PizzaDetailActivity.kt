@@ -1,4 +1,4 @@
-package com.example.bitsandpizzas
+package com.example.bitsandpizzas.activity
 
 import android.os.Bundle
 import android.widget.ImageView
@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.example.bitsandpizzas.R
 import com.example.bitsandpizzas.data.Pizza
 
 class PizzaDetailActivity : AppCompatActivity() {

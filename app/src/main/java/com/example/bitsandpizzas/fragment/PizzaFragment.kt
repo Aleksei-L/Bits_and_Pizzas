@@ -1,4 +1,4 @@
-package com.example.bitsandpizzas
+package com.example.bitsandpizzas.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bitsandpizzas.CaptionedImagesAdapter
+import com.example.bitsandpizzas.R
+import com.example.bitsandpizzas.activity.PizzaDetailActivity
 import com.example.bitsandpizzas.data.Pizza
 
 class PizzaFragment : Fragment() {
@@ -15,7 +18,8 @@ class PizzaFragment : Fragment() {
 		inflater: LayoutInflater, container: ViewGroup?,
 		savedInstanceState: Bundle?
 	): View {
-		val pizzaRecycler: RecyclerView = inflater.inflate(R.layout.fragment_pizza, container, false) as RecyclerView
+		val pizzaRecycler: RecyclerView =
+			inflater.inflate(R.layout.fragment_pizza, container, false) as RecyclerView
 
 		val pizzaNames: Array<String?> = arrayOfNulls(Pizza.pizzas.size)
 		for (i in pizzaNames.indices)

@@ -1,4 +1,4 @@
-package com.example.bitsandpizzas
+package com.example.bitsandpizzas.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +11,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.example.bitsandpizzas.R
+import com.example.bitsandpizzas.fragment.PastaFragment
+import com.example.bitsandpizzas.fragment.PizzaFragment
+import com.example.bitsandpizzas.fragment.StoresFragment
+import com.example.bitsandpizzas.fragment.TopFragment
 import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {

@@ -1,10 +1,11 @@
-package com.example.bitsandpizzas
+package com.example.bitsandpizzas.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.bitsandpizzas.R
 
 class TopFragment : Fragment() {
 	override fun onCreateView(

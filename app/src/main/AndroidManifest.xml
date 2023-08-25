@@ -13,16 +13,19 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
-            android:name=".PizzaDetailActivity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:name=".activity.PastaDetailActivity"
+            android:exported="false" />
         <activity
-            android:name=".OrderActivity"
+            android:name=".activity.PizzaDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".activity.OrderActivity"
             android:exported="false"
             android:label="@string/create_order"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".activity.MainActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
